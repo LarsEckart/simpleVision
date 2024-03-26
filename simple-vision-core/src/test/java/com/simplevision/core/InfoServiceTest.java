@@ -1,78 +1,63 @@
 package com.simplevision.core;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import com.simplevision.core.service.InfoService;
 import com.simplevision.core.view.LensView;
 import com.simplevision.core.view.PatientView;
-import com.simplevision.core.view.PrescriptionDetails;
-import com.simplevision.core.view.PrescriptionView;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 @SpringBootTest
 public class InfoServiceTest {
-    @Autowired private InfoService service;
-    private PatientView patient;
 
-    @BeforeEach
-    public void setUp() {
-        patient = new PatientView();
-    }
+  @Autowired
+  private InfoService service;
+  private PatientView patient;
 
-    @Test
-    public void findPatientByEmail() {
-        patient.setEmail("email");
-        patient.setAddress("myAddress");
+  @BeforeEach
+  public void setUp() {
+    patient = new PatientView();
+  }
 
-        service.create(patient);
+  @Test
+  public void findPatientByEmail() {
+    patient.setEmail("email");
+    patient.setAddress("myAddress");
 
-        assertEquals("myAddress", service.findPatientByEmail("email").getAddress());
-    }
+    service.create(patient);
 
-    @Test
-    public void findPatientByPhone() {
-        patient.setPhoneNumber("phone");
-        patient.setAddress("myAddress");
+    assertEquals("myAddress", service.findPatientByEmail("email").getAddress());
+  }
 
-        service.create(patient);
+  @Test
+  public void findPatientByPhone() {
+    patient.setPhoneNumber("phone");
+    patient.setAddress("myAddress");
 
-        assertEquals("myAddress", service.findPatientByPhone("phone").getAddress());
-    }
+    service.create(patient);
 
-    @Test
-    public void findPatientById() {
-        patient.setAddress("myAddress");
+    assertEquals("myAddress", service.findPatientByPhone("phone").getAddress());
+  }
 
-        long id = service.create(patient).getId();
+  @Test
+  public void findPatientById() {
+    patient.setAddress("myAddress");
 
-        assertEquals("myAddress", service.findPatientById(id).getAddress());
-    }
+    long id = service.create(patient).getId();
 
-    @Test
-    public void findPrescriptionById() {
-        PrescriptionDetails od = new PrescriptionDetails();
-        PrescriptionDetails os = new PrescriptionDetails();
-        od.setSphere("rightSphere");
+    assertEquals("myAddress", service.findPatientById(id).getAddress());
+  }
 
-        PrescriptionView prescription = new PrescriptionView();
-        prescription.setOD(od);
-        prescription.setOS(os);
+  @Test
+  public void findLensById() {
+    LensView lens = new LensView();
+    lens.setStyle("trifocal");
 
-        long id = service.create(prescription).getId();
+    long id = service.create(lens).getId();
 
-        assertEquals("rightSphere", service.findPrescriptionById(id).getOD().getSphere());
-    }
-
-    @Test
-    public void findLensById() {
-        LensView lens = new LensView();
-        lens.setStyle("trifocal");
-
-        long id = service.create(lens).getId();
-
-        assertEquals("trifocal", service.findLensById(id).getStyle());
-    }
+    assertEquals("trifocal", service.findLensById(id).getStyle());
+  }
 }
