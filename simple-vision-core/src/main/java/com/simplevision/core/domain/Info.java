@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Info {
+public class Info implements IPrescription {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,6 +43,7 @@ public class Info {
     this.address = address;
   }
 
+  @Override
   public String getLeftSphere() {
     return leftSphere;
   }
@@ -51,6 +52,7 @@ public class Info {
     this.leftSphere = leftSphere;
   }
 
+  @Override
   public String getLeftCylinder() {
     return leftCylinder;
   }
@@ -59,6 +61,7 @@ public class Info {
     this.leftCylinder = leftCylinder;
   }
 
+  @Override
   public String getLeftAxis() {
     return leftAxis;
   }
@@ -67,6 +70,7 @@ public class Info {
     this.leftAxis = leftAxis;
   }
 
+  @Override
   public String getRightSphere() {
     return rightSphere;
   }
@@ -75,6 +79,7 @@ public class Info {
     this.rightSphere = rightSphere;
   }
 
+  @Override
   public String getRightCylinder() {
     return rightCylinder;
   }
@@ -83,6 +88,7 @@ public class Info {
     this.rightCylinder = rightCylinder;
   }
 
+  @Override
   public String getRightAxis() {
     return rightAxis;
   }
@@ -91,6 +97,7 @@ public class Info {
     this.rightAxis = rightAxis;
   }
 
+  @Override
   public String getPD() {
     return PD;
   }
