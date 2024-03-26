@@ -6,50 +6,58 @@ import com.simplevision.core.view.PatientView;
 import com.simplevision.core.view.PrescriptionView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @EnableAutoConfiguration
 public class InfoController {
-    @Autowired private InfoService service;
 
-    @GetMapping("/prescription/{id}")
-    public PrescriptionView findPrescriptionById(@PathVariable("id") int id) {
-        return service.findPrescriptionById(id);
-    }
+  @Autowired
+  private InfoService service;
 
-    @PostMapping("/prescription")
-    public void create(@RequestBody PrescriptionView prescription) {
-        service.create(prescription);
-    }
+  @GetMapping("/prescription/{id}")
+  public PrescriptionView findPrescriptionById(@PathVariable("id") int id) {
+    return service.findPrescriptionById(id);
+  }
 
-    @GetMapping("/patient/{id}")
-    public PatientView findPatientById(@PathVariable("id") int id) {
-        return service.findPatientById(id);
-    }
+  @PostMapping("/prescription")
+  public void create(@RequestBody PrescriptionView prescription) {
+    service.create(prescription);
+  }
 
-    @PostMapping("/patient")
-    public void create(@RequestBody PatientView patient) {
-        service.create(patient);
-    }
+  @GetMapping("/patient/{id}")
+  public PatientView findPatientById(@PathVariable("id") int id) {
+    return service.findPatientById(id);
+  }
 
-    @PostMapping("/lens")
-    public void create(@RequestBody LensView lens) {
-            service.create(lens);
-    }
+  @PostMapping("/patient")
+  public void create(@RequestBody PatientView patient) {
+    service.create(patient);
+  }
 
-    @GetMapping("/patient")
-    public PatientView findPatientBy(@RequestParam(required = false) String email, @RequestParam(required = false) String phone) {
-        if (email != null) {
-            return service.findPatientByEmail(email);
-        } else if (phone != null) {
-            return service.findPatientByPhone(phone);
-        }
-        return null;
-    }
+  @PostMapping("/lens")
+  public void create(@RequestBody LensView lens) {
+    service.create(lens);
+  }
 
-    @GetMapping("/lens")
-    public LensView findLensById(int id) {
-        return service.findLensById(id);
+  @GetMapping("/patient")
+  public PatientView findPatientBy(@RequestParam(required = false) String email,
+      @RequestParam(required = false) String phone) {
+    if (email != null) {
+      return service.findPatientByEmail(email);
+    } else if (phone != null) {
+      return service.findPatientByPhone(phone);
     }
+    return null;
+  }
+
+  @GetMapping("/lens")
+  public LensView findLensById(int id) {
+    return service.findLensById(id);
+  }
 }

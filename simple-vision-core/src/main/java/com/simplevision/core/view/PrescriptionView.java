@@ -1,40 +1,41 @@
 package com.simplevision.core.view;
 
 public class PrescriptionView {
-    PrescriptionDetails OD;
-    PrescriptionDetails OS;
-    String pd;
-    long id;
 
-    public long getId() {
-        return id;
-    }
+  PrescriptionDetails OD;
+  PrescriptionDetails OS;
+  String pd;
+  long id;
 
-    public void setId(long id) {
-        this.id = id;
-    }
+  public long getId() {
+    return id;
+  }
 
-    public String getPd() {
-        return pd;
-    }
+  public void setId(long id) {
+    this.id = id;
+  }
 
-    public void setPd(String pd) {
-        this.pd = pd;
-    }
+  public String getPd() {
+    return pd;
+  }
 
-    public PrescriptionDetails getOD() {
-        return OD;
-    }
+  public void setPd(String pd) {
+    this.pd = pd;
+  }
 
-    public void setOD(PrescriptionDetails OD) {
-        this.OD = OD;
-    }
+  public PrescriptionDetails getOD() {
+    return OD;
+  }
 
-    public PrescriptionDetails getOS() {
-        return OS;
-    }
+  public void setOD(PrescriptionDetails OD) {
+    this.OD = OD;
+  }
 
-    public void setOS(PrescriptionDetails OS) {
-        this.OS = OS;
-    }
+  public PrescriptionDetails getOS() {
+    return OS;
+  }
+
+  public void setOS(PrescriptionDetails OS) {
+    this.OS = OS;
+  }
 }

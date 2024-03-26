@@ -1,49 +1,50 @@
 package com.simplevision.core.view;
 
 public class PatientView {
-    int id;
-    String email;
-    String phoneNumber;
-    String name;
-    String address;
 
-    public String getEmail() {
-        return email;
-    }
+  int id;
+  String email;
+  String phoneNumber;
+  String name;
+  String address;
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+  public String getEmail() {
+    return email;
+  }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
+  public void setEmail(String email) {
+    this.email = email;
+  }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
+  public String getPhoneNumber() {
+    return phoneNumber;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setPhoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public String getAddress() {
-        return address;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+  public String getAddress() {
+    return address;
+  }
 
-    public int getId() {
-        return id;
-    }
+  public void setAddress(String address) {
+    this.address = address;
+  }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
 }
