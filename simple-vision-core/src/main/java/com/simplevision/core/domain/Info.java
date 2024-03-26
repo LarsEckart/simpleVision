@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Info implements IPrescription, ILens, IPatient {
+public class Info implements IPatient {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,7 +45,6 @@ public class Info implements IPrescription, ILens, IPatient {
     this.address = address;
   }
 
-  @Override
   public String getLeftSphere() {
     return leftSphere;
   }
@@ -54,7 +53,6 @@ public class Info implements IPrescription, ILens, IPatient {
     this.leftSphere = leftSphere;
   }
 
-  @Override
   public String getLeftCylinder() {
     return leftCylinder;
   }
@@ -63,7 +61,6 @@ public class Info implements IPrescription, ILens, IPatient {
     this.leftCylinder = leftCylinder;
   }
 
-  @Override
   public String getLeftAxis() {
     return leftAxis;
   }
@@ -72,7 +69,6 @@ public class Info implements IPrescription, ILens, IPatient {
     this.leftAxis = leftAxis;
   }
 
-  @Override
   public String getRightSphere() {
     return rightSphere;
   }
@@ -81,7 +77,6 @@ public class Info implements IPrescription, ILens, IPatient {
     this.rightSphere = rightSphere;
   }
 
-  @Override
   public String getRightCylinder() {
     return rightCylinder;
   }
@@ -90,7 +85,6 @@ public class Info implements IPrescription, ILens, IPatient {
     this.rightCylinder = rightCylinder;
   }
 
-  @Override
   public String getRightAxis() {
     return rightAxis;
   }
@@ -99,7 +93,6 @@ public class Info implements IPrescription, ILens, IPatient {
     this.rightAxis = rightAxis;
   }
 
-  @Override
   public String getPD() {
     return PD;
   }
@@ -108,7 +101,6 @@ public class Info implements IPrescription, ILens, IPatient {
     this.PD = PD;
   }
 
-  @Override
   public String getLensMaterial() {
     return lensMaterial;
   }
@@ -144,7 +136,6 @@ public class Info implements IPrescription, ILens, IPatient {
     this.id = id;
   }
 
-  @Override
   public String getLensAdditions() {
     return lensAdditions;
   }
@@ -153,7 +144,6 @@ public class Info implements IPrescription, ILens, IPatient {
     this.lensAdditions = lensCoating;
   }
 
-  @Override
   public String getLensStyle() {
     return lensStyle;
   }
