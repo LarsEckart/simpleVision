@@ -1,6 +1,6 @@
 package com.simplevision.prescription;
 
-public class PrescriptionView {
+class PrescriptionView {
 
   PrescriptionDetails OD;
   PrescriptionDetails OS;

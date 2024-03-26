@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "info")
-public class Prescription {
+class Prescription {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

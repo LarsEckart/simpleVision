@@ -1,6 +1,6 @@
 package com.simplevision.prescription;
 
-public class PrescriptionDetails {
+class PrescriptionDetails {
 
   String sphere;
   String cylinder;

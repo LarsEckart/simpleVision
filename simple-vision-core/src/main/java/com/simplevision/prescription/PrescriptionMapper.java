@@ -3,7 +3,7 @@ package com.simplevision.prescription;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PrescriptionMapper {
+class PrescriptionMapper {
 
   public PrescriptionView map(Prescription prescription) {
     PrescriptionView prescriptionView = new PrescriptionView();

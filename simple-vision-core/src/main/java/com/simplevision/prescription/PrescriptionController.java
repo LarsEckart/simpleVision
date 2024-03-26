@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class PrescriptionController {
+class PrescriptionController {
 
   @Autowired
   private PrescriptionService service;
