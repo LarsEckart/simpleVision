@@ -1,63 +1,64 @@
 package com.simplevision.core.mapper;
 
-import com.simplevision.core.domain.Info;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import com.simplevision.core.domain.Lens;
 import com.simplevision.core.view.LensView;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class LensMapperTest {
-    private LensMapper mapper;
-    private LensView lensView;
-    private Info info;
 
-    @BeforeEach
-    public void setup() {
-        mapper = new LensMapper();
-        lensView = new LensView();
-        info = new Info();
-    }
+  private LensMapper mapper;
+  private LensView lensView;
+  private Lens lens;
 
-    @Test
-    public void mapToInfo_lensType() {
-        lensView.setMaterial("trivex");
+  @BeforeEach
+  public void setup() {
+    mapper = new LensMapper();
+    lensView = new LensView();
+    lens = new Lens();
+  }
 
-        assertEquals("trivex", mapper.map(lensView).getLensMaterial());
-    }
+  @Test
+  public void mapToInfo_lensType() {
+    lensView.setMaterial("trivex");
 
-    @Test
-    public void mapToInfo_visionType() {
-        lensView.setStyle("bifocals");
+    assertEquals("trivex", mapper.map(lensView).getLensMaterial());
+  }
 
-        assertEquals("bifocals", mapper.map(lensView).getLensStyle());
-    }
+  @Test
+  public void mapToInfo_visionType() {
+    lensView.setStyle("bifocals");
 
-    @Test
-    public void mapToInfo_coating() {
-        lensView.setAdditions("reflective");
+    assertEquals("bifocals", mapper.map(lensView).getLensStyle());
+  }
 
-        assertEquals("reflective", mapper.map(lensView).getLensAdditions());
-    }
+  @Test
+  public void mapToInfo_coating() {
+    lensView.setAdditions("reflective");
 
-    @Test
-    public void mapToLens_lensType() {
-        info.setLensMaterial("trivex");
+    assertEquals("reflective", mapper.map(lensView).getLensAdditions());
+  }
 
-        assertEquals("trivex", mapper.map(info).getMaterial());
-    }
+  @Test
+  public void mapToLens_lensType() {
+    lens.setLensMaterial("trivex");
 
-    @Test
-    public void mapToLens_visionType() {
-        info.setLensStyle("bifocals");
+    assertEquals("trivex", mapper.map(lens).getMaterial());
+  }
 
-        assertEquals("bifocals", mapper.map(info).getStyle());
-    }
+  @Test
+  public void mapToLens_visionType() {
+    lens.setLensStyle("bifocals");
 
-    @Test
-    public void mapToLens_coating() {
-        info.setLensAdditions("reflective");
+    assertEquals("bifocals", mapper.map(lens).getStyle());
+  }
 
-        assertEquals("reflective", mapper.map(info).getAdditions());
-    }
+  @Test
+  public void mapToLens_coating() {
+    lens.setLensAdditions("reflective");
+
+    assertEquals("reflective", mapper.map(lens).getAdditions());
+  }
 }

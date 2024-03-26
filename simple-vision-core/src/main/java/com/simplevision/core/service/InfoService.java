@@ -2,8 +2,7 @@ package com.simplevision.core.service;
 
 import com.simplevision.core.domain.ILens;
 import com.simplevision.core.domain.IPatient;
-import com.simplevision.core.domain.IPrescription;
-import com.simplevision.core.domain.Info;
+import com.simplevision.core.domain.Lens;
 import com.simplevision.core.domain.Prescription;
 import com.simplevision.core.mapper.LensMapper;
 import com.simplevision.core.mapper.PatientMapper;
@@ -57,11 +56,11 @@ public class InfoService {
     return prescriptionRepository.save(prescriptionMapper.map(prescription));
   }
 
-  public ILens create(LensView lens) {
+  public Lens create(LensView lens) {
     return lensRepository.save(lensMapper.map(lens));
   }
 
   public LensView findLensById(long id) {
-    return lensMapper.map(repository.findById(id).get());
+    return lensMapper.map(lensRepository.findById(id).get());
   }
 }

@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "info")
-class Lens implements ILens {
+public class Lens implements ILens {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
