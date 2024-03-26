@@ -15,4 +15,6 @@ public interface IPrescription {
   String getRightAxis();
 
   String getPD();
+
+  long getId();
 }

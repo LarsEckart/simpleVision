@@ -7,4 +7,6 @@ public interface ILens {
   String getLensAdditions();
 
   String getLensStyle();
+
+  long getId();
 }
