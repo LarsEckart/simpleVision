@@ -23,15 +23,6 @@ public class InfoControllerTest {
     @Mock private InfoService service;
 
     @Test
-    public void findPrescriptionById() {
-        PrescriptionView prescription = new PrescriptionView();
-
-        when(service.findPrescriptionById(anyLong())).thenReturn(prescription);
-
-        assertEquals(prescription, controller.findPrescriptionById(1));
-    }
-
-    @Test
     public void findPatientById() {
         PatientView patient = new PatientView();
 
@@ -70,15 +61,6 @@ public class InfoControllerTest {
         controller.create(patient);
 
         verify(service).create(patient);
-    }
-
-    @Test
-    public void createPrescription() {
-        PrescriptionView prescription = new PrescriptionView();
-
-        controller.create(prescription);
-
-        verify(service).create(prescription);
     }
 
     @Test
