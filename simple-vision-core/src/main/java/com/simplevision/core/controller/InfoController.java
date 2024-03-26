@@ -3,9 +3,7 @@ package com.simplevision.core.controller;
 import com.simplevision.core.service.InfoService;
 import com.simplevision.core.view.LensView;
 import com.simplevision.core.view.PatientView;
-import com.simplevision.core.view.PrescriptionView;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@EnableAutoConfiguration
 public class InfoController {
 
   @Autowired
