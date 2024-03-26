@@ -1,13 +1,13 @@
 package com.simplevision.core.repository;
 
-import com.simplevision.core.domain.Info;
+import com.simplevision.core.domain.Patient;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface InfoRepository extends CrudRepository<Info, Long> {
+public interface InfoRepository extends CrudRepository<Patient, Long> {
 
-  Info findByPhoneNumber(String number);
+  Patient findByPhoneNumber(String number);
 
-  Info findByEmail(String email);
+  Patient findByEmail(String email);
 }
