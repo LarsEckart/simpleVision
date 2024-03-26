@@ -3,7 +3,6 @@ package com.simplevision.core.controller;
 import com.simplevision.core.service.InfoService;
 import com.simplevision.core.view.LensView;
 import com.simplevision.core.view.PatientView;
-import com.simplevision.core.view.PrescriptionView;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

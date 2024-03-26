@@ -1,8 +1,5 @@
 package com.simplevision.prescription;
 
-import com.simplevision.core.domain.Prescription;
-import com.simplevision.core.view.PrescriptionDetails;
-import com.simplevision.core.view.PrescriptionView;
 import org.springframework.stereotype.Component;
 
 @Component

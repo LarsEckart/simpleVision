@@ -2,9 +2,6 @@ package com.simplevision.prescription;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.simplevision.core.domain.Prescription;
-import com.simplevision.core.view.PrescriptionDetails;
-import com.simplevision.core.view.PrescriptionView;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

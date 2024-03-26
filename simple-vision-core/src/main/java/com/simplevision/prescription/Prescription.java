@@ -1,4 +1,4 @@
-package com.simplevision.core.domain;
+package com.simplevision.prescription;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

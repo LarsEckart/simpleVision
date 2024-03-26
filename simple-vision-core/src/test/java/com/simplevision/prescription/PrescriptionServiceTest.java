@@ -2,8 +2,6 @@ package com.simplevision.prescription;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.simplevision.core.view.PrescriptionDetails;
-import com.simplevision.core.view.PrescriptionView;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
