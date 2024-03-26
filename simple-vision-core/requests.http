@@ -1,0 +1,23 @@
+
+###
+
+http://localhost:8080/prescription/1
+
+###
+
+POST http://localhost:8080/prescription
+Content-Type: application/json
+
+{
+  "pd" : "57",
+  "os":  {
+    "sphere": "2.10",
+    "cylinder": "-0.80",
+    "axis": "80"
+  },
+  "od": {
+    "sphere": "2.80",
+    "cylinder": "-1.00",
+    "axis": "160"
+  }
+}
