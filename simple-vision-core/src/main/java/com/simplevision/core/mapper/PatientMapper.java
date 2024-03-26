@@ -1,6 +1,5 @@
 package com.simplevision.core.mapper;
 
-import com.simplevision.core.domain.IPatient;
 import com.simplevision.core.domain.Info;
 import com.simplevision.core.view.PatientView;
 import org.springframework.stereotype.Component;
@@ -8,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class PatientMapper {
 
-  public PatientView map(IPatient patient) {
+  public PatientView map(Info patient) {
     PatientView patientView = new PatientView();
     patientView.setName(patient.getName());
     patientView.setAddress(patient.getAddress());
