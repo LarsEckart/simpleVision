@@ -20,16 +20,6 @@ public class InfoController {
   @Autowired
   private InfoService service;
 
-  @GetMapping("/prescription/{id}")
-  public PrescriptionView findPrescriptionById(@PathVariable("id") int id) {
-    return service.findPrescriptionById(id);
-  }
-
-  @PostMapping("/prescription")
-  public void create(@RequestBody PrescriptionView prescription) {
-    service.create(prescription);
-  }
-
   @GetMapping("/patient/{id}")
   public PatientView findPatientById(@PathVariable("id") int id) {
     return service.findPatientById(id);
