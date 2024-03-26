@@ -1,4 +1,4 @@
-package com.simplevision.core.domain;
+package com.simplevision.lens;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "info")
-public class Lens {
+class Lens {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -19,4 +19,14 @@ class NoCircularDependency {
     rule.check(importedClasses);
   }
 
+  public static final ArchRule lensRule = noClasses()
+      .that().resideInAPackage("..core..")
+      .should().dependOnClassesThat().resideInAnyPackage("..lens..");
+
+  @Test
+  public void checkLensRule() {
+    JavaClasses importedClasses = new ClassFileImporter().importPackages("com.simplevision");
+    lensRule.check(importedClasses);
+  }
+
 }

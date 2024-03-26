@@ -1,9 +1,7 @@
-package com.simplevision.core.mapper;
+package com.simplevision.lens;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.simplevision.core.domain.Lens;
-import com.simplevision.core.view.LensView;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

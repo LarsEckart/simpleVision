@@ -1,6 +1,6 @@
-package com.simplevision.core.view;
+package com.simplevision.lens;
 
-public class LensView {
+class LensView {
 
   String material;
   String style;

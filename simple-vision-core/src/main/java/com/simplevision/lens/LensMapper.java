@@ -1,11 +1,9 @@
-package com.simplevision.core.mapper;
+package com.simplevision.lens;
 
-import com.simplevision.core.domain.Lens;
-import com.simplevision.core.view.LensView;
 import org.springframework.stereotype.Component;
 
 @Component
-public class LensMapper {
+class LensMapper {
 
   public Lens map(LensView lensView) {
     Lens lens = new Lens();

@@ -3,7 +3,6 @@ package com.simplevision.core;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.simplevision.core.service.InfoService;
-import com.simplevision.core.view.LensView;
 import com.simplevision.core.view.PatientView;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -49,15 +48,5 @@ public class InfoServiceTest {
     long id = service.create(patient).getId();
 
     assertEquals("myAddress", service.findPatientById(id).getAddress());
-  }
-
-  @Test
-  public void findLensById() {
-    LensView lens = new LensView();
-    lens.setStyle("trifocal");
-
-    long id = service.create(lens).getId();
-
-    assertEquals("trifocal", service.findLensById(id).getStyle());
   }
 }
