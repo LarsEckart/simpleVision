@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Info implements IPrescription, ILens {
+public class Info implements IPrescription, ILens, IPatient {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,6 +27,7 @@ public class Info implements IPrescription, ILens {
   private String email;
   private String phoneNumber;
 
+  @Override
   public String getName() {
     return name;
   }
@@ -35,6 +36,7 @@ public class Info implements IPrescription, ILens {
     this.name = name;
   }
 
+  @Override
   public String getAddress() {
     return address;
   }
@@ -115,6 +117,7 @@ public class Info implements IPrescription, ILens {
     this.lensMaterial = lensMaterial;
   }
 
+  @Override
   public String getEmail() {
     return email;
   }
@@ -123,6 +126,7 @@ public class Info implements IPrescription, ILens {
     this.email = email;
   }
 
+  @Override
   public String getPhoneNumber() {
     return phoneNumber;
   }
@@ -131,6 +135,7 @@ public class Info implements IPrescription, ILens {
     this.phoneNumber = phoneNumber;
   }
 
+  @Override
   public long getId() {
     return id;
   }
