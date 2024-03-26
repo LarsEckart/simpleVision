@@ -1,6 +1,6 @@
 package com.simplevision.core.controller;
 
-import com.simplevision.core.service.InfoService;
+import com.simplevision.core.service.PatientService;
 import com.simplevision.core.view.PatientView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class InfoController {
+public class PatientController {
 
   @Autowired
-  private InfoService service;
+  private PatientService service;
 
   @GetMapping("/patient/{id}")
   public PatientView findPatientById(@PathVariable("id") int id) {

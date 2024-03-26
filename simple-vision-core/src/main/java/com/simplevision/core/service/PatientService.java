@@ -2,16 +2,16 @@ package com.simplevision.core.service;
 
 import com.simplevision.core.domain.Patient;
 import com.simplevision.core.mapper.PatientMapper;
-import com.simplevision.core.repository.InfoRepository;
+import com.simplevision.core.repository.PatientRepository;
 import com.simplevision.core.view.PatientView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class InfoService {
+public class PatientService {
 
   @Autowired
-  private InfoRepository repository;
+  private PatientRepository repository;
   @Autowired
   private PatientMapper patientMapper;
 
