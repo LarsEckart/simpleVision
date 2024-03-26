@@ -8,6 +8,8 @@ import com.simplevision.core.mapper.LensMapper;
 import com.simplevision.core.mapper.PatientMapper;
 import com.simplevision.core.mapper.PrescriptionMapper;
 import com.simplevision.core.repository.InfoRepository;
+import com.simplevision.core.repository.LensRepository;
+import com.simplevision.core.repository.PrescriptionRepository;
 import com.simplevision.core.view.LensView;
 import com.simplevision.core.view.PatientView;
 import com.simplevision.core.view.PrescriptionView;
@@ -19,6 +21,10 @@ public class InfoService {
 
   @Autowired
   private InfoRepository repository;
+  @Autowired
+  private LensRepository lensRepository;
+  @Autowired
+  private PrescriptionRepository prescriptionRepository;
   @Autowired
   private PatientMapper patientMapper;
   @Autowired
@@ -47,11 +53,11 @@ public class InfoService {
   }
 
   public IPrescription create(PrescriptionView prescription) {
-    return repository.save(prescriptionMapper.map(prescription));
+    return prescriptionRepository.save(prescriptionMapper.map(prescription));
   }
 
   public ILens create(LensView lens) {
-    return repository.save(lensMapper.map(lens));
+    return lensRepository.save(lensMapper.map(lens));
   }
 
   public LensView findLensById(long id) {
