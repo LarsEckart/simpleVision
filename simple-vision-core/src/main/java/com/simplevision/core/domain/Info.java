@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Info implements IPrescription {
+public class Info implements IPrescription, ILens {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -106,6 +106,7 @@ public class Info implements IPrescription {
     this.PD = PD;
   }
 
+  @Override
   public String getLensMaterial() {
     return lensMaterial;
   }
@@ -138,6 +139,7 @@ public class Info implements IPrescription {
     this.id = id;
   }
 
+  @Override
   public String getLensAdditions() {
     return lensAdditions;
   }
@@ -146,6 +148,7 @@ public class Info implements IPrescription {
     this.lensAdditions = lensCoating;
   }
 
+  @Override
   public String getLensStyle() {
     return lensStyle;
   }
