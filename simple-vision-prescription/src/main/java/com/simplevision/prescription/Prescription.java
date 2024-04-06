@@ -1,19 +1,17 @@
 package com.simplevision.prescription;
 
+import java.util.UUID;
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
+import org.hibernate.annotations.Type;
 
 @Entity
-@Table(name = "info")
 class Prescription {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long id;
-
+  @Type(type="org.hibernate.type.UUIDCharType")
+  private UUID id;
   private String leftSphere;
   private String leftCylinder;
   private String leftAxis;
@@ -51,7 +49,7 @@ class Prescription {
     return PD;
   }
 
-  public long getId() {
+  public UUID getId() {
     return id;
   }
 
@@ -83,7 +81,8 @@ class Prescription {
     this.PD = pd;
   }
 
-  public void setId(long id) {
+  public void setId(UUID id) {
     this.id = id;
   }
+
 }

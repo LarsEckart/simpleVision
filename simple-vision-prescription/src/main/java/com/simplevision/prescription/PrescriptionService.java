@@ -1,6 +1,9 @@
 package com.simplevision.prescription;
 
+import java.util.Optional;
+import java.util.UUID;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 class PrescriptionService {
@@ -15,12 +18,36 @@ class PrescriptionService {
     this.prescriptionMapper = prescriptionMapper;
   }
 
-  public Prescription create(PrescriptionView prescription) {
-    return prescriptionRepository.save(prescriptionMapper.map(prescription));
-  }
+  @Transactional
+public Prescription create(PrescriptionView prescription) {
+    System.out.println("PrescriptionService.create " + prescription.getId());
+    Prescription map = prescriptionMapper.map(prescription);
+    System.out.println("PrescriptionService.map " + map.getId());
+    Prescription savedPrescription = prescriptionRepository.save(map);
+    System.out.println("PrescriptionService.save " + savedPrescription.getId());
 
-  public PrescriptionView findPrescriptionById(long id) {
-    return prescriptionMapper.map(prescriptionRepository.findById(id).get());
+    if (!savedPrescription.getId().equals(map.getId())) {
+        throw new RuntimeException("The saved prescription ID does not match the provided ID");
+    }
+
+    Iterable<Prescription> all = prescriptionRepository.findAll();
+    for (Prescription prescription2 : all) {
+        System.out.println("PrescriptionService.all " + prescription2.getId());
+    }
+    return savedPrescription;
+}
+
+  public PrescriptionView findPrescriptionById(UUID id) {
+    System.out.println("PrescriptionService.find " + id);
+    Optional<Prescription> byId = prescriptionRepository.findById(id);
+    Iterable<Prescription> all = prescriptionRepository.findAll();
+    for (Prescription prescription : all) {
+      System.out.println("PrescriptionService.all " + prescription.getId());
+    }
+    PrescriptionView map = prescriptionMapper.map(byId.get());
+
+
+    return map;
   }
 
 }

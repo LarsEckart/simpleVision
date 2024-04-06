@@ -1,5 +1,6 @@
 package com.simplevision.prescription;
 
+import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +15,7 @@ class PrescriptionController {
   private PrescriptionService service;
 
   @GetMapping("/prescription/{id}")
-  public PrescriptionView findPrescriptionById(@PathVariable("id") int id) {
+  public PrescriptionView findPrescriptionById(@PathVariable("id") UUID id) {
     return service.findPrescriptionById(id);
   }
 

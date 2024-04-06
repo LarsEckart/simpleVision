@@ -2,6 +2,7 @@ package com.simplevision.prescription;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.UUID;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,8 +22,9 @@ class PrescriptionServiceTest {
     PrescriptionView prescription = new PrescriptionView();
     prescription.setOD(od);
     prescription.setOS(os);
+    prescription.setId(UUID.randomUUID());
 
-    long id = service.create(prescription).getId();
+    UUID id = service.create(prescription).getId();
 
     assertEquals("rightSphere", service.findPrescriptionById(id).getOD().getSphere());
   }
